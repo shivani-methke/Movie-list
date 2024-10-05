@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infomation</title>
+    <style>
+        body{
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
+            justify-content: center;
+            background-color: rgb(23, 23, 23);
+            
+        }
+        img{
+            height: 350px;
+    
+        }
+        p{
+            font-family: sans-serif;
+            width: 400px;
+            text-align: center;
+            font-weight: 600;
+            color: white;
+        }
+        h1{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>info</h1>
+    
+    <script>
+        console.log(3);
+        function showData() {
+            let movie = JSON.parse(localStorage.getItem("movie"));
+            let html = `
+            <h1>${movie.title}</h1>
+            <img src="${movie.image}">
+            <p>${movie.description}</p>
+            `;
+
+            document.body.innerHTML = html;
+
+        }
+        window.addEventListener("DOMContentLoaded", showData());
+    </script>
+</body>
+</html>
